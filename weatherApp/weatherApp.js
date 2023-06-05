@@ -1,4 +1,4 @@
-//Getting HTML elements
+//Getting HTML elements through the predefined methods of document object
 let locationInput = document.getElementById("location-id");
 let locationName = document.getElementById("location-name");
 let description = document.getElementById("description");
@@ -9,7 +9,7 @@ let cardContainer = document.getElementById("weather-cards");
 
 const apiKey = "RGLWMCQF2M8HJUNW5BWFHTQF5";
 
-// Functionality of Get button
+// Fetching the API response of today and next 1 week weather report on click of Get Weather Button
 btn.onclick = function() {
     if( locationInput.value === "" ) {
         alert("Please enter some location...");
@@ -51,7 +51,7 @@ btn.onclick = function() {
         });
   }  
 }
-//Getting the icon based on weather
+//getIcon(): this method used for getting the icons based on weather condition
 function getIcon(condition) {
   // if else approach
   
@@ -85,7 +85,7 @@ function getIcon(condition) {
     // }
 }
 
-// Getting Day name through date
+// getDayName(): this method used for converting date to day format
 function getDayName(date) {
     let day = new Date(date);
     let days = [
