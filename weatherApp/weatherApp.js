@@ -4,15 +4,13 @@ let locationName = document.getElementById("location-name");
 let description = document.getElementById("description");
 let degress = document.getElementById("temperature");
 let btn = document.getElementById("getWeather");
-let icon = document.getElementById("cloudImg").childNodes[1];
+let icon = document.getElementById("cloudImg");
 let cardContainer = document.getElementById("weather-cards");
-let weatherReport = document.getElementsByClassName("weather-report").childNodes;
-let heading = document.getElementsByClassName("heading");
 
- const apiKey = "RGLWMCQF2M8HJUNW5BWFHTQF5";
+const apiKey = "RGLWMCQF2M8HJUNW5BWFHTQF5";
+
 // Functionality of Get button
 btn.onclick = function() {
-    console.log(locationInput.value);
     if( locationInput.value === "" ) {
         alert("Please enter some location...");
     }
@@ -27,27 +25,24 @@ btn.onclick = function() {
             return response.json();
         })
         .then(data => {
-           console.log(data);
-           degress.innerHTML = data.days[0].feelslike;
+           degress.innerHTML = data.days[0].temp+`<span class="id">&nbsp;&deg;</span><span>&nbsp;C</span>`;
            description.innerHTML = data.days[0].conditions;
            icon.innerHTML = getIcon(data.days[0].icon);
            locationName.innerHTML = data.address;
-          //  weatherReport.style.display = "block";
            weatherCards = data.days.slice(1,8);
-           console.log("weather", weatherCards);
+           `<h3 class="heading">Forecasting the next week weather reports:</h3>`
            weatherCards.forEach((ele,index) => {
-            str +=`<div class="container-block" key=${ele.datetime}>
-             <div class="week-name">${getDayName(ele.datetime)}</div>
-             <div class="weekly-cloud-img" id="cloudImg">
-             ${getIcon(ele.hours.icon)}
-             </div>
-                 <span class="weekly-temp">${ele.feelslike}</span><span class="id">&deg;</span><span>C</span>
-                 <div class="weekly-description">${ele.description}</div>
-             </div>`
+            str +=
+            `<div class="container-block" key=${ele.datetime}>
+            <div class="week-name">${getDayName(ele.datetime)}</div>
+              <div class="weekly-cloud-img" id="cloudImg"> 
+              ${getIcon(ele.icon)}
+              </div>
+                <span class="weekly-temp">${ele.temp}</span><span class="id"> &deg;</span><span> C</span>
+                <div class="weekly-description">${ele.description}</div>
+            </div>`
            })
            cardContainer.innerHTML = str;
-          //  heading.style.display = "flex";
-          //  cardContainer.childNodes.style.display = "flex";    
         })
         .catch(err => {
           if(err) {
@@ -60,44 +55,39 @@ btn.onclick = function() {
 function getIcon(condition) {
   // if else approach
   
-    // if (condition === "partly-cloudy-day") {
-    //   return `<img src="https://i.ibb.co/PZQXH8V/27.png" width="40px" height="40px" />`;
-    // } else if (condition === "partly-cloudy-night") {
-    //   return `<img src="https://i.ibb.co/Kzkk59k/15.png" width="40px" height="40px" />`;
-    // } else if (condition === "rain") {
-    //   return `<img src="https://i.ibb.co/kBd2NTS/39.png" width="40px" height="40px" />`;
-    // } else if (condition === "clear-day") {
-    //   return `<img src="https://i.ibb.co/rb4rrJL/26.png" width="40px" height="40px" />`;
-    // } else if (condition === "clear-night") {
-    //   return `<img src="https://i.ibb.co/1nxNGHL/10.png" width="40px" height="40px" />`;
-    // } else {
-    //   return `<img src="https://i.ibb.co/rb4rrJL/26.png" width="40px" height="40px" />`;
-    // }
-  //  Switch case approach
-    switch(condition) {
-      case(condition === "partly-cloudy-day"):
-        return `<img src="https://i.ibb.co/PZQXH8V/27.png" width="40px" height="40px" />`;
-      break;
-      case (condition === "partly-cloudy-night"):
-       return `<img src="https://i.ibb.co/Kzkk59k/15.png" width="40px" height="40px" />`;
-      case(condition === "rain"):
-         return `<img src="https://i.ibb.co/kBd2NTS/39.png" width="40px" height="40px" />`;
-        break;
-      case(condition === "clear-day"):
-        return `<img src="https://i.ibb.co/rb4rrJL/26.png" width="40px" height="40px" />`;
-        break;
-      case(condition === "clear-night"):
-         return `<img src="https://i.ibb.co/1nxNGHL/10.png" width="40px" height="40px" />`;
-        break;
-      default:
-         return `<img src="https://i.ibb.co/rb4rrJL/26.png" width="40px" height="40px" />`;
+    if (condition === "partly-cloudy-day") {
+      return `<img src="https://i.ibb.co/PZQXH8V/27.png" width="40px" height="40px" />`;
+    } else if (condition === "partly-cloudy-night" || condition === "cloudy") {
+      return `<img src="https://i.ibb.co/Kzkk59k/15.png" width="40px" height="40px" />`;
+    } else if (condition === "rain") {
+      return `<img src="https://i.ibb.co/kBd2NTS/39.png" width="40px" height="40px" />`;
+    } else if (condition === "clear-day") {
+      return `<img src="https://i.ibb.co/rb4rrJL/26.png" width="40px" height="40px" />`;
+    } else if (condition === "clear-night") {
+      return `<img src="https://i.ibb.co/1nxNGHL/10.png" width="40px" height="40px" />`;
+    } else {
+      return `<img src="https://i.ibb.co/rb4rrJL/26.png" width="40px" height="40px" />`;
     }
+  //  Switch case approach
+    // switch(condition) {
+    //   case(condition === "partly-cloudy-day"):
+    //     return `<img src="https://i.ibb.co/PZQXH8V/27.png" width="40px" height="40px" />`;
+    //   case (condition === "partly-cloudy-night"):
+    //    return `<img src="https://i.ibb.co/Kzkk59k/15.png" width="40px" height="40px" />`;
+    //   case(condition === "rain"):
+    //      return `<img src="https://i.ibb.co/kBd2NTS/39.png" width="40px" height="40px" />`;
+    //   case(condition === "clear-day"):
+    //     return `<img src="https://i.ibb.co/rb4rrJL/26.png" width="40px" height="40px" />`;
+    //   case(condition === "clear-night"):
+    //      return `<img src="https://i.ibb.co/1nxNGHL/10.png" width="40px" height="40px" />`;
+    //   default:
+    //      return `<img src="https://i.ibb.co/rb4rrJL/26.png" width="40px" height="40px" />`;
+    // }
 }
 
 // Getting Day name through date
 function getDayName(date) {
     let day = new Date(date);
-    console.log('day', day.getDay());
     let days = [
       "Sunday",
       "Monday",

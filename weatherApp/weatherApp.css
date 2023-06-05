@@ -1,10 +1,13 @@
 body {
-    margin-top: 40px;
-    background-image: linear-gradient(to right, rgb(139, 139, 196), rgb(103, 150, 169));
+    margin-top: 2.5rem;
+    background-image: url("../weatherApp/weather.png");
+    background-repeat: no-repeat;
     color: white;
+    background-size: cover;  
 }
 body > div {
     text-align: center;
+    color: black;
 }
 input {
     width: 15%;
@@ -19,38 +22,44 @@ input {
 .material-symbols-outlined {
     color: white;
 }
-/* .weather-report {
-    display: block;
-} */
-.clould-image {
+img {
     padding-bottom: .5rem;
-    width: 2.5rem;
-    height: 2.5rem;
 }
 .degrees {
-    padding-top: 5px;
+    padding-top: .3125rem;
 }
 div > div {
-    padding-top: 10px;
+    padding-top: .625rem;
 }
 div + h3 {
-    margin-left: 40px;
-}
-.heading {
-    display: none;
+    margin-left: 2.5rem;
 }
 .container {
     display: flex;
-    border: 2px double rgb(224, 215, 215);
-    padding: 20px;
-    margin: 40px;
+    padding: 1.25rem;
+    margin: 2.5rem;
     border-radius: .5rem;
 }
 .container-block {
     width: 20%;
-    border: 2px double rgb(224, 215, 215);
-    padding: 10px;
-    margin: 20px;
+    border: .125rem double rgb(224, 215, 215);
+    padding: .625rem 1rem 1.5rem 1rem;
+    margin: 1.25rem;
+    margin: 1.25rem;
     overflow: hidden;
-    border-radius: .25rem;
+    border-radius: .5rem;
+    color: white;
+    background-color: rgb(86, 86, 178);
 }
+
+  @media only screen and (max-width: 73.75rem) {
+    .container {
+        display: block;
+    }
+    .container-block {
+        width: auto;
+    }
+    input {
+        width: auto;
+    }
+  }
