@@ -5,10 +5,8 @@ let description = document.getElementById("description");
 let degress = document.getElementById("temperature");
 let btn = document.getElementById("getWeather");
 let icon = document.getElementById("cloudImg").childNodes[1];
-console.log("icon",icon);
 let cardContainer = document.getElementById("weather-cards");
 let weatherReport = document.getElementsByClassName("weather-report").childNodes;
-console.log("333",weatherReport)
 let heading = document.getElementsByClassName("heading");
 
  const apiKey = "RGLWMCQF2M8HJUNW5BWFHTQF5";
