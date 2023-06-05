@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather App</title>
+        <link href="weatherApp.css" rel="stylesheet"></link>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h1>Weather App</h1>
+            <input type="text" placeholder="Enter the city name" id="location-id"/>
+            <input type="button" id="getWeather" value="Get Weather"/>
+            <p id="error"></p>
+            <div class="weather-report">
+                <div id="cloudImg">
+                    <img class="clould-image" src=""/> 
+                </div>
+                <span id="temperature"></span><span class="id">&nbsp;&deg;</span><span>&nbsp;C</span>
+                <div id="description"></div>
+                <div id="location-name"></div>
+           </div>
+        </div>
+        <h3 class="heading">Forecasting the next week weather reports:</h3>
+            <div class="container" id="weather-cards">
+            </div>
+        <script src="weatherApp.js" type="text/javascript"></script>
+    </body>
+</html>

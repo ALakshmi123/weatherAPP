@@ -1,0 +1,56 @@
+body {
+    margin-top: 40px;
+    background-image: linear-gradient(to right, rgb(139, 139, 196), rgb(103, 150, 169));
+    color: white;
+}
+body > div {
+    text-align: center;
+}
+input {
+    width: 15%;
+    height: 1.5rem;
+    padding-left: .25rem;
+}
+#getWeather {
+    height: 1.8rem;
+    padding: 0 0.625rem;
+    width: fit-content;
+}
+.material-symbols-outlined {
+    color: white;
+}
+/* .weather-report {
+    display: block;
+} */
+.clould-image {
+    padding-bottom: .5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.degrees {
+    padding-top: 5px;
+}
+div > div {
+    padding-top: 10px;
+}
+div + h3 {
+    margin-left: 40px;
+}
+.heading {
+    display: none;
+}
+.container {
+    display: flex;
+    border: 2px double rgb(224, 215, 215);
+    padding: 20px;
+    margin: 40px;
+    border-radius: .5rem;
+}
+.container-block {
+    width: 20%;
+    border: 2px double rgb(224, 215, 215);
+    padding: 10px;
+    margin: 20px;
+    overflow: hidden;
+    border-radius: .25rem;
+}
