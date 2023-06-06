@@ -19,20 +19,11 @@ input {
     padding: 0 0.625rem;
     width: fit-content;
 }
-.material-symbols-outlined {
-    color: white;
-}
 img {
     padding-bottom: .5rem;
 }
-.degrees {
-    padding-top: .3125rem;
-}
 div > div {
     padding-top: .625rem;
-}
-div + h3 {
-    margin-left: 2.5rem;
 }
 .container {
     display: flex;
@@ -52,14 +43,14 @@ div + h3 {
     background-color: rgb(86, 86, 178);
 }
 
-  @media only screen and (max-width: 73.75rem) {
-    .container {
-        display: block;
-    }
-    .container-block {
-        width: auto;
-    }
-    input {
-        width: auto;
-    }
-  }
+@media only screen and (max-width: 73.75rem) {
+.container {
+    display: block;
+}
+.container-block {
+    width: auto;
+}
+input {
+    width: auto;
+}
+}
