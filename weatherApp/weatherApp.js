@@ -12,7 +12,7 @@ const apiKey = "RGLWMCQF2M8HJUNW5BWFHTQF5";
 //Fetching the API response of today and next 1 week weather report on click of Get Weather Button
 btn.onclick = function() {
     if( locationInput.value === "" ) {
-        alert("Please enter some location...");
+        alert("Please enter a city name");
     }
     else {
       let str="";
@@ -45,7 +45,7 @@ btn.onclick = function() {
       })
       .catch(err => {
         if(err) {
-          alert("Invalid name entered");
+          alert("Please enter a valid city name");
         }
       });
   }  
