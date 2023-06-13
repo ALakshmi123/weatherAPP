@@ -4,7 +4,7 @@ let locationName = document.getElementById("location-name");
 let description = document.getElementById("description");
 let degress = document.getElementById("temperature");
 let btn = document.getElementById("getWeather");
-let icon = document.getElementById("cloudImg");
+let icon = document.getElementById("cloud-img");
 let cardContainer = document.getElementById("weather-cards");
 
 const apiKey = "RGLWMCQF2M8HJUNW5BWFHTQF5";
@@ -33,12 +33,10 @@ btn.onclick = function() {
           weatherCards.forEach((ele,index) => {
           str +=
           `<div class="container-block" key=${ele.datetime}>
-          <div class="week-name">${getDayName(ele.datetime)}</div>
-            <div class="weekly-cloud-img" id="cloudImg"> 
-            ${getIcon(ele.icon)}
-            </div>
-              <span class="weekly-temp">${ele.temp}</span><span class="id"> &deg;</span><span> C</span>
-              <div class="weekly-description">${ele.description}</div>
+          <div>${getDayName(ele.datetime)}</div>
+            <div> ${getIcon(ele.icon)}</div>
+              <span>${ele.temp}</span><span class="id"> &deg;</span><span> C</span>
+              <div>${ele.description}</div>
           </div>`
           })
           cardContainer.innerHTML = str;
