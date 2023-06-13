@@ -3,7 +3,7 @@ let locationInput = document.getElementById("location-id");
 let locationName = document.getElementById("location-name");
 let description = document.getElementById("description");
 let degress = document.getElementById("temperature");
-let btn = document.getElementById("getWeather");
+let btn = document.getElementById("get-weather");
 let icon = document.getElementById("cloud-img");
 let cardContainer = document.getElementById("weather-cards");
 
