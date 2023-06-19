@@ -1,9 +1,9 @@
 body {
     margin-top: 2.5rem;
-    background-image: url("../weatherApp/weather.png");
+    background-image: url("../weather-app-local/images/weatherImage.webp");
     background-repeat: no-repeat;
     color: white;
-    background-size: cover;  
+    background-size: 100%;
 }
 body > div {
     text-align: center;
@@ -19,8 +19,14 @@ input {
     padding: 0 0.625rem;
     width: fit-content;
 }
+#error-text {
+    text-align: justify;
+    padding: .25rem .5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
 img {
     padding-bottom: .5rem;
+    width: 2.5rem;
 }
 div > div {
     padding-top: .625rem;
@@ -40,10 +46,54 @@ div > div {
     overflow: hidden;
     border-radius: .5rem;
     color: white;
-    background-color: rgb(86, 86, 178);
+    background-color: rebeccapurple;
 }
+/* Modal Stylings */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: .625rem;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 15.625rem;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    display: flex;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 1.25rem 1rem;
+    border: .0625rem solid #888;
+    width: fit-content;
+    border-radius: 8px
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .close-icon {
+     width: 1.5rem;
+  }
+  .alert-icon {
+    width: 1.875rem;
+    height: 1.875rem;
+  }
 
 @media only screen and (max-width: 73.75rem) {
+    body {
+        background-size: 300vh;
+    }
     .container {
         display: block;
     }
@@ -52,5 +102,11 @@ div > div {
     }
     input {
         width: auto;
+    }
+    input[type="text"]:focus {
+        border: .0625rem solid black !important;
+    }
+    .modal-content {
+        margin: .625rem;
     }
 }
