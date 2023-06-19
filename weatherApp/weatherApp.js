@@ -3,7 +3,7 @@ let locationInput = document.getElementById("location-id");
 let locationName = document.getElementById("location-name");
 let description = document.getElementById("description");
 let degress = document.getElementById("temperature");
-let btn = document.getElementById("get-weather");
+const btn = document.getElementById("get-weather");
 let icon = document.getElementById("cloud-img");
 let cardContainer = document.getElementById("weather-cards");
 let errorMessage = document.getElementById("error-text");
@@ -83,17 +83,17 @@ function getWeather() {
 function getIcon(condition) {
   //if else approach
     if (condition === "partly-cloudy-day") {
-      return `<img src="https://i.ibb.co/PZQXH8V/27.png" width="40px" height="40px" />`;
+      return `<img src="https://i.ibb.co/PZQXH8V/27.png" width="40px" height="40px" alt="weather-icon" />`;
     } else if (condition === "partly-cloudy-night" || condition === "cloudy") {
-      return `<img src="https://i.ibb.co/Kzkk59k/15.png" width="40px" height="40px" />`;
+      return `<img src="https://i.ibb.co/Kzkk59k/15.png" width="40px" height="40px" alt="weather-icon" />`;
     } else if (condition === "rain") {
-      return `<img src="https://i.ibb.co/kBd2NTS/39.png" width="40px" height="40px" />`;
+      return `<img src="https://i.ibb.co/kBd2NTS/39.png" width="40px" height="40px" alt="weather-icon" />`;
     } else if (condition === "clear-day") {
-      return `<img src="https://i.ibb.co/rb4rrJL/26.png" width="40px" height="40px" />`;
+      return `<img src="https://i.ibb.co/rb4rrJL/26.png" width="40px" height="40px" alt="weather-icon" />`;
     } else if (condition === "clear-night") {
-      return `<img src="https://i.ibb.co/1nxNGHL/10.png" width="40px" height="40px" />`;
+      return `<img src="https://i.ibb.co/1nxNGHL/10.png" width="40px" height="40px" alt="weather-icon" />`;
     } else {
-      return `<img src="https://i.ibb.co/rb4rrJL/26.png" width="40px" height="40px" />`;
+      return `<img src="https://i.ibb.co/rb4rrJL/26.png" width="40px" height="40px" alt="weather-icon" />`;
     }
 }
 
