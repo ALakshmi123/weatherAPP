@@ -78,28 +78,33 @@ div > div {
   /* The Close Button */
   .close-icon {
     width: 1rem;
-    margin-top: -0.2rem;
   }
   .alert-icon {
-    width: 1.875rem;
-    height: 1.875rem;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
-@media only screen and (max-width: 73.75rem) {
+  @media only screen and (max-width: 73.75rem) {
     body {
         background-size: 300vh;
     }
     .container {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
     }
     .container-block {
-        width: auto;
+        width: 30%;
     }
     input {
         width: auto;
     }
 }
 @media only screen and (max-width: 47.9375rem) {
+    .container {
+        display: block;
+    }
     input[type="text"]:focus {
         border: .0625rem solid black !important;
     }
