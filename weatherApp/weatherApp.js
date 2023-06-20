@@ -3,10 +3,10 @@ let locationInput = document.getElementById("location-id");
 let locationName = document.getElementById("location-name");
 let description = document.getElementById("description");
 let degress = document.getElementById("temperature");
-const btn = document.getElementById("get-weather");
 let icon = document.getElementById("cloud-img");
 let cardContainer = document.getElementById("weather-cards");
 let errorMessage = document.getElementById("error-text");
+const btn = document.getElementById("get-weather");
 var modalPopUp = document.getElementById("my-modal");
 var closeIcon = document.getElementsByClassName("close")[0];
 
