@@ -84,7 +84,7 @@ div > div {
     height: 1.5rem;
   }
 
-  @media only screen and (max-width: 73.75rem) {
+@media only screen and (max-width: 73.75rem) {
     body {
         background-size: 300vh;
     }
@@ -94,9 +94,6 @@ div > div {
         justify-content: center;
         margin: 0;
     }
-    .container-block {
-        width: 30%;
-    }
     input {
         width: auto;
     }
@@ -104,6 +101,9 @@ div > div {
 @media only screen and (max-width: 47.9375rem) {
     .container {
         display: block;
+    }
+    .container-block {
+        width: auto;
     }
     input[type="text"]:focus {
         border: .0625rem solid black !important;
