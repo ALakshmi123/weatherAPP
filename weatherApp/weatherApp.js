@@ -15,12 +15,12 @@ const apiKey = "RGLWMCQF2M8HJUNW5BWFHTQF5";
 //Fetching the API response of today and next 1 week weather report on click of Get Weather Button
 getWeatherButton.onclick = function() {
   let letters = /^[A-Z a-z]+$/;
-    if( locationInput.value === "" ) {
+    if(locationInput.value === "") {
       modalPopUp.style.display = "block";
       errorMessage.innerHTML = "Please enter a city name excluding special characters. For example: Hyderabad.";
       closeModal();
     }
-    else if( locationInput.value.match(letters) )  {
+    else if(locationInput.value.match(letters)) {
       getWeather();
     }
     else {
@@ -31,7 +31,7 @@ getWeatherButton.onclick = function() {
 }
 
 function getWeather() {
-  let card="";
+  let card = "";
   let city = locationInput.value;
   let url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=${apiKey}&contentType=json`;
   fetch(url, {
@@ -65,7 +65,7 @@ function getWeather() {
       errorMessage.innerHTML = "Please enter a valid city name. For example: Hyderabad, New York.";
       modalPopUp.style.display = "block";
       closeModal();
-      }
+    }
   });
 }
 
@@ -102,6 +102,7 @@ function getDayName(date) {
     ];
     return days[day.getDay()];
 }
+
 function closeModal() {
   // When the user clicks the modal
   closeIcon.onclick = function() {
